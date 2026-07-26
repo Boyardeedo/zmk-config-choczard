@@ -21,6 +21,41 @@
 
             label = "MMATTEST";
         };
+
+        dsrba: dsrba {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp D &kp S &kp R &kp B &kp A &kp SPACE>;
+            label = "DSRBA";
+        };
+
+        dss: dss {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp D &kp S &kp S &kp SPACE>;
+            label = "DSS";
+        };
+
+        dscalled: dscalled {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp D &kp S &kp C &kp A &kp L &kp L &kp E &kp D &kp SPACE>;
+            label = "DSCALLED";
+        };
+
+        dsvm: dsvm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp D &kp S &kp V &kp M &kp SPACE>;
+            label = "DSVM";
+        };
+
+        dsrefilled: dsrefilled {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp D &kp S &kp R &kp E &kp F &kp I &kp L &kp L &kp E &kp D &kp SPACE>;
+            label = "DSREFILLED";
+        };
     };
 
     combos {
@@ -56,25 +91,25 @@
 
         default_layer {
             display-name = "Mac";
-            bindings = <
-           &kp Q      &kp W  &kp E     &kp R  &kp T                                  &kp Y      &kp U  &kp I      &kp O    &kp P
-           &kp A      &kp S  &kp D     &kp F  &kp G                                  &kp H      &kp J  &kp K      &kp L    &kp SEMI
-           &kp Z      &kp X  &kp C     &kp V  &kp B                                  &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH
-&kp LSHFT  &kp LCTRL         &kp LGUI         &kp ENTER  &lt 1 TAB  &lt 1 BACKSPACE  &kp SPACE         &kp RGUI            &kp RALT  &kp RSHFT
+            bindings = 
+           &dsrba     &dss    &dscalled  &dsvm   &dsrefilled                    &trans     &trans  &trans     &trans   &trans
+           &trans     &kp F2  &trans     &trans  &trans                         &trans     &trans  &trans     &trans   &trans
+           &trans     &trans  &kp F3     &trans  &trans                         &trans     &trans  &trans     &trans   &trans
+&trans     &trans            &trans             &trans     &trans     &trans   &trans             &trans              &trans    &trans
             >;
         };
 
         num_func {
-            bindings = <
+            bindings = 
            &kp F1     &kp F2  &kp F3    &kp F4  &kp F5                        &kp LBKT   &kp N7  &kp N8   &kp N9  &kp RBKT
            &kp F6     &kp F7  &kp F8    &kp F9  &kp F10                       &kp SQT    &kp N4  &kp N5   &kp N6  &kp APOS
            &trans     &trans  &trans    &trans  &trans                        &kp N0     &kp N1  &kp N2   &kp N3  &kp FSLH
-&kp LSHFT  &kp LCTRL          &kp LGUI          &alt_sae  &kp BSPC  &kp BSPC  &mmattest          &kp DOT          &kp RALT  &kp LSHFT
+&kp LSHFT  &kp LCTRL          &kp LGUI          &alt_sae  &kp BSPC  &kp BSPC  &dsrba          &kp DOT          &kp RALT  &kp LSHFT
             >;
         };
 
         bootloader {
-            bindings = <
+            bindings = 
         &bootloader  &studio_unlock  &bt BT_CLR     &studio_unlock  &bootloader                  &bootloader  &studio_unlock  &trans  &studio_unlock  &bootloader
         &trans       &trans          &bt BT_DISC 0  &trans          &trans                       &trans       &trans          &trans  &trans          &trans
         &trans       &trans          &trans         &trans          &trans                       &trans       &trans          &trans  &trans          &trans
@@ -83,7 +118,7 @@
         };
 
         layer_3 {
-            bindings = <
+            bindings = 
         &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
         &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
         &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
